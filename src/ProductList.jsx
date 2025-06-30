@@ -350,7 +350,7 @@ function ProductList({ onHomeClick }) {
                                             className={(plant.name in addedToCart && addedToCart[plant.name] === true) ? "product-button added-to-cart" : "product-button" }
                                             onClick={() => handleAddToCart(plant)}
                                         >
-                                            Add to Cart
+                                            {(plant.name in addedToCart && addedToCart[plant.name] === true) ? "Added to Cart" : "Add to Cart" }
                                         </button>
                                     </div>
                                 ))}
