@@ -284,12 +284,14 @@ function ProductList({ onHomeClick }) {
     };
 
     const getRefreshedProductList = () => {
+        let filteredProductInCart = {};
         let productsInCart = cart.map(item => item.name);
         productsInCart.forEach(name => {
             if (addedToCart.hasOwnProperty(name)) {
                 filteredProductInCart[name] = addedToCart[name];
             }
         });
+        return filteredProductInCart;
     }
 
     return (
